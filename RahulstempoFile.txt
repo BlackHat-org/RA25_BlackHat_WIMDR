@@ -1,0 +1,2 @@
+My commit via git bash
+Try ,it works
