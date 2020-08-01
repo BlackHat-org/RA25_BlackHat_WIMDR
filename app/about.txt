@@ -1,1 +1,2 @@
-AAS app 
+Accidental alert system... 
+An app that will be help user to access information of his vehicle
