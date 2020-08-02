@@ -36,16 +36,17 @@ class User(AbstractUser):
     
     
 class owner(models.Model):
-    sensor1 = models.IntegerField()
-    sensor2 = models.IntegerField()
+    Accelerometer = models.IntegerField()
+    DPS = models.IntegerField()
+    BPS = models.IntegerField()
+    Gyroscope=models.IntegerField()
     vehicle_location=models.CharField(max_length=50)
     vehicle=models.CharField(max_length=50)
     vehicle_fuel = models.CharField(max_length=100,default="0")
     vehicle_pol = models.CharField(max_length=3,default="0")
     
     def to_dict(self):
-        return {'sensor1':self.sensor1,'sensor2':self.sensor2,'vehicle_location':self.vehicle_location,'vehicle':self.vehicle,'vehicle_fuel':self.vehicle_fuel,'vehicle_pol':self.vehicle_pol}
+        return {'Accelerometer':self.Accelerometer,'DPS':self.DPS,'BPS':self.BPS,'Gyroscope':self.Gyroscope,'vehicle_location':self.vehicle_location,'vehicle':self.vehicle,'vehicle_fuel':self.vehicle_fuel,'vehicle_pol':self.vehicle_pol}
      
-       
 
     
