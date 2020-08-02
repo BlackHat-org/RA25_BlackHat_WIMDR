@@ -1,0 +1,17 @@
+.Aux{
+    width: 50%;
+    margin-left: 27%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 9px 5px rgb(199, 196, 196);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border: 8px solid rgb(255, 239, 239);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+@media(max-width: 920px){
+    .Aux{
+        width: 100%;
+        margin-left: auto;
+    }
+}

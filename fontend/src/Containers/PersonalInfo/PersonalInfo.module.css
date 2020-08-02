@@ -1,0 +1,131 @@
+.PersonalInfo{
+    height: 950px;
+    display: flex;
+    flex-flow: column;
+    overflow: scroll;
+    align-items: center;
+}
+.DetailsContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 4px;
+    margin-top: 3%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(66,66,159,1) 45%, rgba(28,163,255,1) 95%);
+    box-shadow: 0px 6px 9px 4px rgb(241 241 241);
+}
+.Img{
+    margin-left: 60%;
+    width: 25%;
+    padding-top: 43px;
+}
+.Info{
+    width: 50%;
+    height: 66%;
+    position: absolute;
+    display: grid;
+    flex-flow: column;
+    background: url('https://www.pngitem.com/pimgs/m/149-1492667_transparent-texture-background-png-white-texture-background-hd.png');
+    margin-left: 10%;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    justify-items: left;
+    padding-top: 3%;
+    margin-top: -26%;
+    word-spacing: 3px;
+    padding-bottom: 4%;
+}
+p {
+    font-family: 'bitter', sans-serif;
+    line-height: 24px;
+    text-align: justify;
+    color: black;
+    font-weight: 400;
+}
+.Button{
+   
+    position: absolute;
+    height: 40px;
+    width: 160px;
+    margin-top: 79%;
+    margin-left: -50%;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    background: #0a0c23;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Muli-SemiBold";
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    
+}
+.Info span{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+    font-weight: medium;
+    align-items: center;
+    font-size: 25px;
+}
+@media(max-width: 720px){
+    .Img{
+        width: 50%;
+        margin-left: 10%;
+    }
+    .Button{
+        margin-top: 1105px;
+    }
+    .Info{
+        margin-top: 10%;
+        width: 79%;
+        margin-left: 14%;
+    }
+    .PersonalInfo{
+        height: 1400px;
+    }
+}
+@media(max-width: 470px){
+    .Img{
+        width: 62%;
+        margin-left: 5%;
+        margin-top: 9%;
+    }
+    .Button{
+        margin-left: -52%;
+    }
+    .Info span{
+        display: block;
+    }
+    .PersonalInfo{
+        height: 1700px;
+    }
+    .Info{
+        margin-top: 10%;
+    width: 86%;
+    margin-left: 8%;
+    height: 41%;
+    text-align-last: left;
+    }
+}
+@media(min-width: 1000px){
+    .Button{
+        margin-top: 710px;
+        margin-left: -45%!important;
+    }
+}
+@media  (max-width: 870px) and (min-width: 716px){
+    .Button{
+        margin-top: 700px;
+        margin-left: -45%!important;
+    }
+}
+@media (max-width: 717px) and (min-width: 467px){
+    .Button{
+        margin-top: 1390px;
+        margin-left: -39%!important;
+    }
+}

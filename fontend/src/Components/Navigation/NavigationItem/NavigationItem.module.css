@@ -1,0 +1,32 @@
+.NavigationItem{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+}
+.NavigationItem img{
+    height: 100%;
+    width: 110px;
+}
+.logos{
+    color: white;
+}
+@media(max-width: 500px){
+    .NavigationItem {
+        flex-flow: column;
+        padding-bottom: 270px;
+    }
+    .NavigationItem img{
+        height: 32%;
+        width: 60%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}@media(min-width: 1000px){
+    .NavigationItem img{
+        height: 100%;
+        width: 110px;
+        margin-left: -15%;
+    }
+}

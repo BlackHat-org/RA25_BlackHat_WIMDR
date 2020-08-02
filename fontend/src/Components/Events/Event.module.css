@@ -1,0 +1,25 @@
+.Event1{
+ width: 100%;
+ background-color: yellow;
+ height: 100%;
+ width: 100%;
+}
+.Para1{
+    font-weight: 600;
+    font-size: 40px;
+}
+.Para2{
+    font-weight: 500;
+    font-size: 30px;
+}
+.Event2{
+    width: 100%;
+    background-color: rgb(255, 31, 87);
+    height: 100%;
+    width: 100%;
+   }
+   .Event2 button{
+       width: 30%;
+       background-color: rgb(239, 255, 19);
+       height: 10%;
+   }
