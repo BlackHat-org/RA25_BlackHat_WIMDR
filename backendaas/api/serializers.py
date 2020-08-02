@@ -9,3 +9,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class ownerSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = owner
+        fields = ('Accelerometer','DPS','Gyroscope','BPS','vehicle_location','vehicle','vehicle_fuel','vehicle_pol')
+
+
+
