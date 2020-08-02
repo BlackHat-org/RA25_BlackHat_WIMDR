@@ -74,7 +74,7 @@ public class homepage extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url="https://newhope4life.herokuapp.com/api-authlogout/";
+                String url="https://backend-aas.herokuapp.com/api-authlogout/";
                 StringRequest stringRequest=new StringRequest(Request.Method.GET, url,new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
