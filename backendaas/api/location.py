@@ -6,7 +6,7 @@ def local(lng,lat):
     latitude = lat   #21.222707
     longitude = lng  #81.622747
     # api_key = apikey
-    api_key = 'EjEgY59AUriIddupjwoHzaCNTKJp67JqfQTgeiUuMRs' # Acquire from developer.here.com
+    api_key = 'yFyLLHf81sDVPtkJGW1gu6nIhMIUGsd4asC8K_MdvlI' # Acquire from developer.here.com
     query = 'hospitals'
     limit = 5
 
@@ -26,12 +26,15 @@ def local(lng,lat):
     hospitalOne_address =  data['items'][0]['address']['label']
     hospitalOne_latitude = data['items'][0]['position']['lat']
     hospitalOne_longitude = data['items'][0]['position']['lng']
+    hospitalOne_mobile = data['items'][0]['contacts'][0]["mobile"][0]["value"]
 
 
     hospitalTwo = data['items'][1]['title']
     hospitalTwo_address =  data['items'][1]['address']['label']
     hospitalTwo_latitude = data['items'][1]['position']['lat']
     hospitalTwo_longitude = data['items'][1]['position']['lng']
+    hospitalTwo_mobile = data['items'][1]['contacts'][0]["mobile"][0]["value"]
+
 
     hospitalThree = data['items'][2]['title']
     hospitalThree_address =  data['items'][2]['address']['label']
@@ -43,6 +46,8 @@ def local(lng,lat):
     hospitalFour_address =  data['items'][3]['address']['label']
     hospitalFour_latitude = data['items'][3]['position']['lat']
     hospitalFour_longitude = data['items'][3]['position']['lng']
+#     hospitalOne_mobile = data['items'][0]['contacts'][0]["mobile"][0]["value"]
+
 
     hospitalFive = data['items'][4]['title']
     hospitalFive_address =  data['items'][4]['address']['label']
@@ -50,7 +55,41 @@ def local(lng,lat):
     hospitalFive_longitude = data['items'][4]['position']['lng']
     
 #     print(hospitalOne_address)
-    return hospitalOne,hospitalOne_address
+    try:
+        hospitalOne = data['items'][0]['title']
+    except KeyError:
+        hospitalOne = "none"
+    
+    try:
+        hospitalOne_address =  data['items'][0]['address']['label']
+    except KeyError:
+        hospitalOne_address = "none"
+    
+    try:
+        hospitalOne_mobile = data['items'][0]['contacts'][0]["mobile"][0]["value"]
+    except KeyError:
+        hospitalOne_mobile = "none"
+    ######################################
+    try:
+        hospitalTwo = data['items'][1]['title']
+    except KeyError:
+        hospitalTwo = "none"
+    
+    try:
+        hospitalTwo_address =  data['items'][1]['address']['label']
+    except KeyError:
+        hospitalTwo_address = "none"
+    
+    try:
+        hospitalTwo_mobile = data['items'][1]['contacts'][0]["mobile"][0]["value"]
+    except KeyError:
+        hospitalTwo_mobile = "none"
+        
+    hos_one = [hospitalOne,hospitalOne_address,hospitalOne_mobile]
+    hos_two = [hospitalTwo,hospitalTwo_address,hospitalTwo_mobile]
+    
+    return hos_one,hos_two
+#     return data
 
 
 def actual(lng,lat):
@@ -67,12 +106,13 @@ def actual(lng,lat):
 #     print(type(response)
     dic= response.json()
 #     print(dic)
+    # return dic
     return dic['items'][0]['title']
 
 
-# d=actual(81.622747,21.222707)
+# d=actual(76.200490,33.800703)
 # print(d)
 
     
-# print(local(81.622747,21.222707,'fWWIAFOX80G3AYZYrfn05eseVIUkLgVu0LToiWrIuXQ'))
+# print(local(81.622747,21.222707))
 # print(actual)
