@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserChangeForm
 
 
 
-from .models import User
+from .models import User,owner
     
 class UserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
@@ -34,4 +34,5 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
     
     
-admin.site.register(User, UserAdmin)    
+admin.site.register(User, UserAdmin)
+admin.site.register(owner)     
