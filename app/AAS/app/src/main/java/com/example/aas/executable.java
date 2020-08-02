@@ -65,7 +65,7 @@ public class executable extends BroadcastReceiver {
                                 edit.apply();
 
                                 Intent i = new Intent();
-                                i.setClassName(context,"com.example.alert.Alertclass");
+                                i.setClassName(context,"com.example.aas.Alertclass");
                                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(i);
                             }

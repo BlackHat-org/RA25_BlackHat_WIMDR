@@ -57,9 +57,9 @@ public class homepage extends AppCompatActivity {
         fetchusername();
 
         //starting the background service
-        /*alarm alarmhandler=new alarm(this);
+        alarm alarmhandler=new alarm(this);
         alarmhandler.cancelAlarmManager();
-        alarmhandler.setAlarmManager();*/
+        alarmhandler.setAlarmManager();
 
         signouthandler();
         getlocation_function();
