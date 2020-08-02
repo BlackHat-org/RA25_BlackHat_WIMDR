@@ -13,7 +13,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".aboutaas_activity"></activity>
+        <activity android:name=".Alertclass"></activity>
+        <activity android:name=".aboutaas_activity" />
         <activity android:name=".manageaccount_activity" />
         <activity android:name=".vehicleStatus_activity" />
         <activity android:name=".lastEvent_activity" />
