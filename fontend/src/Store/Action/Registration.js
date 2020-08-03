@@ -79,34 +79,33 @@ export const reQuest =(email,password,Isignup,restData) =>{
         dispatch(showSpinner());
         let SignUp = {
             email: email,
-            password: password
+            password: password,
+            returnSecureToken: true
         };
         
       let Url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAEe9J4ZWAZynk9_2QnlZBu3Y0JV4AQpG0'
          if(!Isignup){
-             Url = 'https://cors-anywhere.herokuapp.com/https://newhope4life.herokuapp.com/api/rest-auth/login/'
+             Url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAEe9J4ZWAZynk9_2QnlZBu3Y0JV4AQpG0'
          }
-         Axios.post(Url,SignUp,)
+         Axios.post(Url,SignUp)
                .then(res =>{
-                // let expirationDate = new Date(new Date().getTime() + res.data.expiresIn*1000)
-                // localStorage.setItem('token', res.data.idToken);
-                // localStorage.setItem('expirationDate', expirationDate);
-                // localStorage.setItem('userId', res.data.localId);
-                // if(Isignup){
-                // dispatch(daTa(restData,res.data.localId));
-                // dispatch(userIdandToken(res.data.localId,res.data.idToken));
-                // }
-                // else{
-                //    dispatch(userIdandToken(res.data.localId,res.data.idToken));
-                //    dispatch(infoSuccess());
-                // }
-                // dispatch(checkAuthTimeout(res.data.expiresIn))
-             console.log(res);    
-            })
+                let expirationDate = new Date(new Date().getTime() + res.data.expiresIn*1000)
+                localStorage.setItem('token', res.data.idToken);
+                localStorage.setItem('expirationDate', expirationDate);
+                localStorage.setItem('userId', res.data.localId);
+                if(Isignup){
+                dispatch(daTa(restData,res.data.localId));
+                dispatch(userIdandToken(res.data.localId,res.data.idToken));
+                }
+                else{
+                   dispatch(userIdandToken(res.data.localId,res.data.idToken));
+                   dispatch(infoSuccess());
+                }
+                dispatch(checkAuthTimeout(res.data.expiresIn))
+                })
                .catch(err =>{
-                //    dispatch(errorHandler(err.response.data.error));
-                //    dispatch(hideSpinner());
-             console.log(err);    
+                   dispatch(errorHandler(err.response.data.error));
+                   dispatch(hideSpinner());
                });
     }
 }

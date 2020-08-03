@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: column;
     overflow: scroll;
+    background: url(https://cutewallpaper.org/21/hd-gradient-wallpaper/plain-blue-gradient-hd-wallpapers-Kastner-Research-Group.jpg);
 }
 .Spin1{
     margin-top: 150px;
@@ -10,8 +11,37 @@
 .Spin2{
     margin-top: 550px;
 }
+.login_btn{
+    border: none;
+    width: 152px;
+    height: 40px;
+    margin: auto;
+    margin-top: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #133a50;
+    text-transform: uppercase;
+    font-family: "Muli-SemiBold";
+    border-radius: 20px;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    font-weight: bold;
+    border: 2px solid;
+    box-sizing: unset!important     ;
+}
+.login_btn:hover {
+    
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15)!important;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.16), 0 4px 15px 0 rgba(0 0 0 / 0.86)!important;
+    }
+
+
+
 .OrderButton {
-    background-color: #ffd13a;
+    background-color: #427590   ;
     outline: none;
   position: relative;
   left: -5px;
@@ -23,15 +53,17 @@
     color: #111006;
     font-family: inherit;
     font-size: 1.0em;
-    width: 32%;
+    font-weight: bold;
+    
     padding: 15px 30px;
     box-shadow: 2px 2px 2px #9c9c9c;
 }
 
 .OrderButton:hover, .OrderButton:active {
-    background-color: #b1ff34;
-    border: 1px solid #966909;
-    color: #966909;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15)!important;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.16), 0 4px 15px 0 rgba(0 0 0 / 0.86)!important;
+    color: #1c180e;
+    font-weight: bold;
 }
 
 .OrderButton:disabled {

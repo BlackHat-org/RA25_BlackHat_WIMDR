@@ -1,25 +1,47 @@
 .Event1{
  width: 100%;
- background-color: yellow;
+ background-color: white;
  height: 100%;
  width: 100%;
 }
 .Para1{
-    font-weight: 600;
-    font-size: 40px;
+    font-weight: 900;
+    font-size: 31px;
+    font-family:Merriweather;
+    text-align: center;
 }
 .Para2{
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: 900;
+    font-size: 31px;
+    font-family: Merriweather;
+    text-align: center;
+    line-height: 29px;
 }
 .Event2{
     width: 100%;
-    background-color: rgb(255, 31, 87);
+    background-color: white;
     height: 100%;
     width: 100%;
    }
    .Event2 button{
-       width: 30%;
-       background-color: rgb(239, 255, 19);
-       height: 10%;
+    border: none;
+    width: 152px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c90e0e;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Muli-SemiBold";
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    font-weight: bold;
    }
+
+.accident{
+    width: 17%;
+    margin-top: -25px;
+
+}

@@ -29,7 +29,7 @@ class Home extends Component {
                  </MDBRow>
               
 
-                </MDBContainer>
+                </MDBContainer><hr></hr>
                  
                       <MDBContainer fluid>
                       <h3>Features</h3>
