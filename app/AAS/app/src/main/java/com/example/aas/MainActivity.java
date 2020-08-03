@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button signin;
     RequestQueue requestQueue;
     SharedPreferences userLogin;
-    Intent Homepage;
+    Intent splashScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         userLogin=getSharedPreferences("UserLoginData",MODE_PRIVATE);
-        Homepage=new Intent(MainActivity.this,homepage.class);
+        splashScreen=new Intent(MainActivity.this,splashscreen.class);
 
         String savedemail=userLogin.getString("email","null");
         String savedpassword=userLogin.getString("password","null");
         String savedtoken=userLogin.getString("key","null");
 
         if(savedemail!="null" && savedpassword!="null" && savedtoken!="null"){
-            startActivity(Homepage);
+            startActivity(splashScreen);
         }
         else{
             login();
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             edit.putString("key",obtainedtoken);
                             edit.apply();
 
-                            startActivity(Homepage);
+                            startActivity(splashScreen);
 
                         }catch (JSONException e){
                             e.printStackTrace();

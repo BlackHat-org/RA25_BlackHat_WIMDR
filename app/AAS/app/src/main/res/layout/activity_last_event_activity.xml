@@ -4,6 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0B0B0B"
     tools:context=".lastEvent_activity">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="RECENT EVENT LOG :"
+        android:textColor="#009688"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/datadisplaybackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:text="Last Location : "
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:text="Time Of Incident :"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:text="Incident Location : "
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:text="Vehicle Details : "
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="Loading..."
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Loading..."
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Loading..."
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.468"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Loading..."
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.536"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

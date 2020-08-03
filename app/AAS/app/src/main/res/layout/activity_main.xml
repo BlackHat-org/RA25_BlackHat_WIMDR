@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212121"
+    android:background="#0B0B21"
     tools:context=".MainActivity">
 
     <Button
@@ -51,7 +51,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#424242"
+        android:background="#2F2F5E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

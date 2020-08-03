@@ -40,7 +40,6 @@ public class executable extends BroadcastReceiver {
     }
     public void fetch(final Context context){
 
-
         final String gettoken=getpreferences.getString("key","null");
 
         String url = "https://backend-aas.herokuapp.com/api/rest-auth/user/";
@@ -53,21 +52,32 @@ public class executable extends BroadcastReceiver {
 
                             JSONObject object=new JSONObject(response);
                             int iseventoccured=object.getInt("accident");
-                            if(iseventoccured==1){
-                                String location=object.getString("vehicle_location");
+                            String location=object.getString("vehicle_location");
 
+                            SharedPreferences.Editor edit=accidentdata.edit();
+
+                            if(iseventoccured==1){
                                 SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy '('HH:mm:ss')'");
                                 String currentDateandTime = sdf.format(new Date());
-
-                                SharedPreferences.Editor edit=accidentdata.edit();
                                 edit.putString("eventlocation",location);
                                 edit.putString("eventtime",currentDateandTime);
+                                edit.putString("lastlocation",location);
                                 edit.apply();
 
                                 Intent i = new Intent();
                                 i.setClassName(context,"com.example.aas.Alertclass");
                                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(i);
+                            }
+                            else {
+                                edit.putString("lastlocation",location);
+                                edit.apply();
+
+                                Intent i = new Intent();
+                                i.setClassName(context,"com.example.aas.Alertclass");
+                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                context.startActivity(i);
+
                             }
 
 

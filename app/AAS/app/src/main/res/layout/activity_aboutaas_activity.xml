@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0B0B0B"
     tools:context=".aboutaas_activity">
 
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="About AAS : "
+        android:textColor="#009688"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/datadisplaybackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="25sp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="25sp"
+            android:text="@string/aboutaas"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

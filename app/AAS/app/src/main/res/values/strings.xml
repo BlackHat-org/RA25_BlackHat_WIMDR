@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AAS</string>
+    <string name="aboutaas">In AAS we are collecting data from the incident via the help of sensors(such as piezoelectric sensor ,Tilt sensor and Heat detector ). The sensor analyze the impact range and convert it to digital data to be sent for further processing. The data is sent to cloud attached with GPS coordinates of the location of incident. Once the data is successfully uploaded to cloud then its analyzed with machine learning. After analyzing the data system decides on the basis of machine learning that how much severe the incident is. If the outcome of the data declare the incident to be severe then the system initializes Alert and Calling procedures.</string>
 </resources>
