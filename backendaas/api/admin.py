@@ -21,7 +21,7 @@ class UserAdmin(BaseUserAdmin):
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-          (_('user_info'), {'fields': ('owner_ph_no','dob','address','adhar','native_name','phone_no','vehicle','vehicle_location','city','zip','vehicle_fuel','vehicle_pol_status')}),
+          (_('user_info'), {'fields': ('owner_ph_no','dob','address','adhar','native_name','phone_no','vehicle','vehicle_location','city','zip','vehicle_fuel','vehicle_pol_status','accident')}),
     )
     add_fieldsets = (
         (None, {
@@ -34,5 +34,6 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
     
     
-admin.site.register(User, UserAdmin)
-admin.site.register(owner)     
+admin.site.register(User, UserAdmin)    
+    
+admin.site.register(owner)  
