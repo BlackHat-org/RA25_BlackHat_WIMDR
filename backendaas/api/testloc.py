@@ -6,7 +6,7 @@ def local(lng,lat):
     latitude = lat   #21.222707
     longitude = lng  #81.622747
     # api_key = apikey
-    api_key = 'ZopqSl5PGQVO8bG4T2487g9iS2Tw_Wbb577tVAlOcN0' # Acquire from developer.here.com
+    api_key = 'nX-LR_6Dp1xrJlBmm-tm2Vvldc4vy52r417TbJ_9x94' # Acquire from developer.here.com
     query = 'hospitals'
     limit = 5
 
@@ -100,7 +100,7 @@ def actual(lng,lat):
 
     payload = {}
     headers = {
-      'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiI0bXk2bGtWcmNieExEYjN1QkkySSIsImlhdCI6MTU5NjQ0NTU1NCwiZXhwIjoxNTk2NTMxOTU0LCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLjZVU2dLLUNpQS00Z2U0VUhoMVBpTFEuTWVjX1NaVW1CTE1JeVltbk5fVFdYLVRZTHJRVGJtTEN0Z21FeC0xa1pWUTA1Skh3d25FYkdsTjRxMWZib1cyOXI4MnBhSjF5akVudDNUNkZaWTU3R1cwSkpVc0ZCWnh2ZlpTLUxIYlNhOFlHMUZWaG9XVmR5LVJzaVZBbm1BWjJCcGtsVDFzQl8tMzVDSF9kWXRwRU53LlJkSGw0QTdUQ1JJdUw4ZjlMdFBacFV0UkJBSVFpdFhFXzFKLTVGRGp1dnc.jsm6oVA954EUpI57OSB71WkKwibWoVMA3-UAPkVfvemnxHRRHudVGcioDje_D1dbUeXPPr_DaDetgNblFFzZkyrK1Y4_iT-sy91dlAu5tt2u_12PoR8oV2EoGx7WxSsTqxcjMhek7-DDPTYW5KqZZR87Zb6GKNXNl0cXOVK-I_g3Vcmo3DkR252eOugx6splq8x5PResiwGee2SLFIYU6xZUkIUxAkKD0D7iqShy3d9wdxSuyNYiCs0QGgQVWHv9WYknIYgnIQ54giwX9TZZaH_kVPLgdG_-i3w9qzkJ8LxTf1ovkY8ZfcDouU7qpXsKlam6y3PYG3_a08jEXcbo-Q'
+      'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsImN0eSI6IkpXVCIsImlzcyI6IkhFUkUiLCJhaWQiOiI0bXk2bGtWcmNieExEYjN1QkkySSIsImlhdCI6MTU5NjM1NDg3MCwiZXhwIjoxNTk2NDQxMjcwLCJraWQiOiJqMSJ9.ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJRMEpETFVoVE5URXlJbjAuLk9ZT2VXQnZMSkZOWThhX0N6SEpjaXcuWkpscTlZNnFzR21MYjdXQ0pZd1VlbE4xVzgzRGx0VG9RS3Npd3ZGQ1lvNGljeDdHMU5OWmFOaVQyX3Mtd1hDV3l3eEhiQzN0bGxldlZmRFY5U1FTLW9ZZzg3ODhRdVk2eXFBcTM5Rkxxb1VPbW9zQS1lYzliMThqVFBCbzdPTEViN2d2bXZyZVNmLXI0STRsWHdrbkdnLldUbFNtd0NXVG1remZaUWhMS1NUSkc5WXM1Yml5WVVveGE3Q1ppZEQwenM.kCzzcIaA2xhLGgILvBd4hjr86S4WcN6VfQ9P1dOWE0UXyHDBaqnPtBjetqmcWDOC1uSPcEkT18w-NTbqTqAlyv05WWjzV2mNnwAnNcDpNRbWxYxfhinFfdNc1RMzZhaA3O4ffrpwvOKs4-CzmCVjpjkfzge3rcCDLymiH6w9b0ILHAnjuIvTNiNJnB90d_YPPf72GIGEeRjBnnyJLkNjjnc8Ivf8dLoGaPWc-Ex-m3VLbQIuzRZxZVqQT93CiomY5gvrykmmycAeJs98_NrM2NqWXMn6BJl5_W1HQNjBSlagojPn7SYd3aTAExR1v5l7D6WMPum46xFLPXOjixu6TA'
     }
 
     response = requests.request("GET", url, headers=headers, data = payload)
