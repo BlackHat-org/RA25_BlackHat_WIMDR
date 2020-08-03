@@ -83,7 +83,6 @@ public class manageaccount_activity extends AppCompatActivity {
                             String vehiclejson=object.getString("vehicle");
                             String cityjson=object.getString("city");
                             String zipjson=object.getString("zip");
-                            String photourl=object.getString("photo");
 
                             nameview.setText(firstname+" "+lastname);
                             emailview.setText(email);
@@ -95,7 +94,7 @@ public class manageaccount_activity extends AppCompatActivity {
                             cityview.setText(cityjson);
                             zipview.setText(zipjson);
 
-                            fetchprofilephoto(photourl,gettoken);
+                            fetchprofilephoto(gettoken);
 
 
                         } catch (JSONException e) {
@@ -126,7 +125,7 @@ public class manageaccount_activity extends AppCompatActivity {
 
     }
 
-    public void fetchprofilephoto(String photourl, final String gettoken){
+    public void fetchprofilephoto(final String gettoken){
 
         String url = "https://randomuser.me/api/portraits/lego/2.jpg";
 

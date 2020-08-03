@@ -10,7 +10,9 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/datadisplaybackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -323,6 +325,7 @@
         android:id="@+id/accountinfo_z"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
         android:text="Account Info : "
         android:textColor="#009688"
