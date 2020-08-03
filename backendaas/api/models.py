@@ -24,6 +24,7 @@ class User(AbstractUser):
     zip = models.CharField(max_length=6,default=0)
     vehicle_fuel= models.CharField(max_length=50,default=0)
     vehicle_pol_status= models.CharField(max_length=3,default=0)
+    accident=models.IntegerField(default=0)
     
     
     USERNAME_FIELD = 'email'
@@ -44,9 +45,12 @@ class owner(models.Model):
     vehicle=models.CharField(max_length=50)
     vehicle_fuel = models.CharField(max_length=100,default="0")
     vehicle_pol = models.CharField(max_length=3,default="0")
+
     
     def to_dict(self):
         return {'Accelerometer':self.Accelerometer,'DPS':self.DPS,'BPS':self.BPS,'Gyroscope':self.Gyroscope,'vehicle_location':self.vehicle_location,'vehicle':self.vehicle,'vehicle_fuel':self.vehicle_fuel,'vehicle_pol':self.vehicle_pol}
      
+     
+       
 
     

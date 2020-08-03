@@ -7,12 +7,13 @@ const NavigationItem =(props) =>{
   return(
     <div className={classes.NavigationItem}>
       <img src ={Logo} className={classes.logo} alt='Logo' />
-      <NavigationItems link='/'>HOME</NavigationItems>
+      <NavigationItems type='' link='/'>HOME</NavigationItems>
       {(props.isAuth && (props.status || props.Info)) 
-      ? <NavigationItems link='/personalinfo'>PERSONAL INFO</NavigationItems> : null}
+      ? <NavigationItems type='' link='/personalinfo'>PERSONAL INFO</NavigationItems> : null}
+      <NavigationItems type='true'><button style={{backgroundColor: 'black', border: 'none',color: 'white',fontWeight: 'bold'}} onClick={()=> window.open(link, "_blank")}>ADMIN LOGIN</button></NavigationItems>
       {!props.isAuth
-       ?<NavigationItems link='/register'>REGISTER/LOGIN</NavigationItems>
-       : <NavigationItems link='/logout'>LOGOUT</NavigationItems>}
+       ?<NavigationItems type='' link='/register'>REGISTER</NavigationItems>
+       : <NavigationItems type='' link='/logout'>LOGOUT</NavigationItems>}
     </div>
   )
 }

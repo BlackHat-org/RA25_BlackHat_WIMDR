@@ -7,7 +7,6 @@ from rest_framework import status
 from twilio.rest import Client
 from .location import local,actual
 
-
 from api.permissions import IsLoggedInUserOrAdmin, IsAdminUser
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -52,27 +51,28 @@ class ownerViewSet(viewsets.ModelViewSet):
         
         def calling(h1_add,h1_name,vec_loc):
         
-            account_sid = 'AC46974b397ba1243ec460b22e7c18554c'
-            auth_token = '114e35043399e963bdc6a96dfe5d21ba'
+            account_sid = 'AC0b6be55e2bb2b89e7ef65d0ec1badbfd'
+            auth_token = '9cb800807474c4fcf69ee3ad1de3877f'
             client = Client(account_sid, auth_token)
-            mg = "this is an accidental Alert System  from    Black  Hats .........."
+            mg = "this... is..   an  ..  accidental    Alert  ... System ..    from    .....   Black  Hats .........."
             msg = "<Response><Say>"+mg+" accident  taken place at  "+str(vec_loc)+" .... aapki car  ka accident   "+str(vec_loc)+"   hua hai  "+"</Say></Response>"
 
             call = client.calls.create(
                                     twiml= msg,
-                                    to='+916260399227',
-                                    from_='+12512996774'
+                                    to='+916265176283',
+                                    from_='+12057406198'
                                     )
-            mosg = mg+" accident  taken place at "+ str(vec_loc) + " the nearest hosspital is "+str(h1_name)+ "  Address  = "+ str(h1_add)
+            mosg = mg+" accident  taken place at "+ str(vec_loc) + " the nearest hosspital is "+str(h1_name)+ "  Address  = "+ str(h1_add) + "...." + "https://www.google.com/maps/search/?api=1&query=21.1562462,81.3418322"
             message = client.messages \
                 .create(
                     body=mosg,
-                    from_='+12512996774',
-                    to='+916260399227'
+                    from_='+12057406198',
+                    to='+916265176283'
                 )
 
         if y==2 or y==1:
             obj = User.objects.get(vehicle= str(ob.vehicle))
+            print(obj.first_name)
             # vec_loc = ob.vehicle_location
             vec_loc = actual(lng,lat)
             phone_no=obj.phone_no
@@ -82,7 +82,9 @@ class ownerViewSet(viewsets.ModelViewSet):
 
             # print(h_name,h_add)
             print(phone_no)
+            print(obj.accident)
             obj.accident = 1
+            obj.save()
             print(obj.accident)
             calling(h1_add,h1_name,vec_loc)
        

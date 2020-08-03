@@ -12,8 +12,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 class PersonalInfo extends Component {
     state = {
         ShowModal : false,
-        latitude: null,
-        longitude: null
+        location: null
     }
     componentDidMount(){
         if(this.props.IsAuthenticated && (this.props.status || this.props.Info)){
@@ -24,21 +23,15 @@ class PersonalInfo extends Component {
   ShowProfile =(identifier,ShowDetails) =>{
       return <span>
       <h3 style={{fontWeight:'700!important'}}>{identifier} :-</h3> 
-      <p>{ShowDetails[0][identifier]}</p>
+      <p>{ShowDetails}</p>
       </span>
   }
   onClickHandler = (ShowDetails) =>{
       this.setState(prev =>{
           return {ShowModal: !prev.ShowModal}
       })
-      this.setState({latitude: ShowDetails[0]['latitude'],longitude: ShowDetails[0]['longitude']})
+      this.setState({location:ShowDetails.vehicle_location})
            
-    }
-    RandomForFuel = (max,min) =>{
-        return Math.random() * (max - min) + min;
-    }
-    RandomForPollution = (max,min) =>{
-        return Math.random() * (max - min) + min;
     }
     render(){
         let Navigate = null;
@@ -50,21 +43,21 @@ class PersonalInfo extends Component {
             let disable = false
         if(ShowDetails){
               Show = <div className={classes.Info}>
-                       {this.ShowProfile('UserName',ShowDetails)}
-                       {this.ShowProfile('Email',ShowDetails)}
-                       {this.ShowProfile('CarNo',ShowDetails)}
-                       {this.ShowProfile('AdhaarNo',ShowDetails)}
-                       {this.ShowProfile('PersonalMobile',ShowDetails)}
-                       {this.ShowProfile('RelativeMobile1',ShowDetails)}
-                       {this.ShowProfile('RelativeMobile2',ShowDetails)}
-                       {this.ShowProfile('RegistrationDate',ShowDetails)}
+                       {this.ShowProfile('UserName',ShowDetails.first_name)}
+                        {this.ShowProfile('Email',ShowDetails.email)}
+                        {this.ShowProfile('Car No',ShowDetails.vehicle)}
+                        {this.ShowProfile('Address',ShowDetails.address)}
+                        {this.ShowProfile('Personal Mobile',ShowDetails.owner_ph_no)}
+                      {this.ShowProfile('Relative Name',ShowDetails.native_name)}
+                      {this.ShowProfile('Relative Mobile',ShowDetails.phone_no)}
+                       {this.ShowProfile('ZIP CODE',ShowDetails.zip)}
                        <span>
                    <h3 style={{fontWeight:'700!important'}}>Fuel Remaining :-</h3>
                           <GaugeChart id="gauge-chart5"
                    nrOfLevels={420}
                     arcsLength={[0.3, 0.5, 0.2]}
                   colors={['#EA4228', '#F5CD19','#5BE12C' ]}
-                   percent={this.RandomForFuel(0,1)}
+                   percent={(ShowDetails.vehicle_fuel)/100}
                    arcPadding={0.02}
                     textColor= {'black'}
                      hideText ={true}
@@ -91,7 +84,7 @@ class PersonalInfo extends Component {
             if(this.state.ShowModal){
             ModalShow = <span>
                             <Modal show={true} modalclosed ={() =>this.onClickHandler(this.props.userDetails)}>
-                                 <Event latitude={this.state.latitude} longitude={this.state.longitude}/>
+                                 <Event location={this.state.location}/>
                             </Modal>
                           </span>
             }
