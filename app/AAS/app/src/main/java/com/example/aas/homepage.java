@@ -249,6 +249,7 @@ public class homepage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent aboutaasintent=new Intent(getApplicationContext(),aboutaas_activity.class);
                 startActivity(aboutaasintent);
+
             }
         });
     }

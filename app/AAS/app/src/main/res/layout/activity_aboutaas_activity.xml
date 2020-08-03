@@ -8,7 +8,7 @@
     tools:context=".aboutaas_activity">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/accountinfo_z"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -30,7 +30,7 @@
         android:background="@drawable/datadisplaybackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15">
+        app:layout_constraintTop_toBottomOf="@+id/accountinfo_z">
 
         <TextView
             android:id="@+id/textView16"

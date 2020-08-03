@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,11 +38,14 @@ public class vehicleStatus_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_status_activity);
 
-        vehicleinfo=findViewById(R.id.textView22);
+        vehicleinfo=findViewById(R.id.text4_z);
         fuel=findViewById(R.id.progressBar);
         pollution=findViewById(R.id.progressBar2);
         percentagefuel=findViewById(R.id.textView23);
-        percentagepoll=findViewById(R.id.textView24);
+        percentagepoll=findViewById(R.id.text5_z);
+
+        requestQueue= Volley.newRequestQueue(this);
+        getpreferences=getSharedPreferences("UserLoginData",MODE_PRIVATE);
 
         fuel.setMax(100);
         pollution.setMax(100);
@@ -65,7 +69,7 @@ public class vehicleStatus_activity extends AppCompatActivity {
                             String vehicleinfojson=object.getString("vehicle");
                             vehicleinfo.setText(vehicleinfojson);
                             int fuelstatusjson=object.getInt("vehicle_fuel");
-                            int pollutionjson=object.getInt("vehicle_polution");
+                            int pollutionjson=object.getInt("vehicle_pol_status");
                             fuel.setProgress(fuelstatusjson,true);
                             pollution.setProgress(pollutionjson,true);
                             percentagefuel.setText(Integer.toString(fuelstatusjson)+"%");
