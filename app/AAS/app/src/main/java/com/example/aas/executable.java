@@ -64,6 +64,8 @@ public class executable extends BroadcastReceiver {
                                 edit.putString("lastlocation",location);
                                 edit.apply();
 
+                                //changevaluetozero();
+
                                 Intent i = new Intent();
                                 i.setClassName(context,"com.example.aas.Alertclass");
                                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -101,5 +103,47 @@ public class executable extends BroadcastReceiver {
 
         requestQueue.add(getRequest);
     }
+
+    /*public void changevaluetozero(){
+        final String gettoken=getpreferences.getString("key","null");
+
+        String url = "https://backend-aas.herokuapp.com/api/rest-auth/user/";
+        StringRequest putRequest = new StringRequest(Request.Method.PUT, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("updatingaccidentvalue",response);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        String errormsg=error.toString();
+                        Log.d("updatingaccidentvalue",errormsg);
+                    }
+                }
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+
+                params.put("Authorization", "Token"+" "+gettoken);
+
+                return params;
+            }
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("email",uemail);
+                params.put("password",upassword);
+
+                return params;
+            }
+        };
+
+        requestQueue.add(putRequest);
+    }*/
 
 }
