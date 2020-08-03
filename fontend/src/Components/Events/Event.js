@@ -3,7 +3,7 @@ import classes from './Event.module.css';
 import accImg from '../../Assets/image/accident1.jpg';
 import noImg from '../../Assets/image/smiley.png';
 const Event = (props) =>{
-    let link = 'http://maps.google.com/?q=' + props.latitude + ',' + props.longitude
+    let link = 'http://maps.google.com/?q=' + props.location
     return(
         <div>
             {props.latitude ?<div className = {classes.Event2}>

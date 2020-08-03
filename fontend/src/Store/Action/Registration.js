@@ -27,8 +27,6 @@ export const userIdandToken =(userId,token) =>{
 }
 export const logOut =() =>{
     localStorage.removeItem('token');
-    localStorage.removeItem('expirationDate');
-    localStorage.removeItem('userId');
     return{
         type: actionTypes.LOGOUT
     }
@@ -79,49 +77,45 @@ export const reQuest =(email,password,Isignup,restData) =>{
         dispatch(showSpinner());
         let SignUp = {
             email: email,
-            password: password,
-            returnSecureToken: true
+            password: password
         };
         
       let Url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAEe9J4ZWAZynk9_2QnlZBu3Y0JV4AQpG0'
          if(!Isignup){
-             Url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAEe9J4ZWAZynk9_2QnlZBu3Y0JV4AQpG0'
+             Url = 'https://cors-anywhere.herokuapp.com/https://backend-aas.herokuapp.com/api/rest-auth/login/'
          }
-         Axios.post(Url,SignUp)
+         Axios.post(Url,SignUp,)
                .then(res =>{
-                let expirationDate = new Date(new Date().getTime() + res.data.expiresIn*1000)
-                localStorage.setItem('token', res.data.idToken);
-                localStorage.setItem('expirationDate', expirationDate);
-                localStorage.setItem('userId', res.data.localId);
+                 localStorage.setItem('token',res.data.key);
                 if(Isignup){
                 dispatch(daTa(restData,res.data.localId));
                 dispatch(userIdandToken(res.data.localId,res.data.idToken));
                 }
                 else{
-                   dispatch(userIdandToken(res.data.localId,res.data.idToken));
+                   dispatch(userIdandToken(null,res.data.key));
                    dispatch(infoSuccess());
+                   dispatch(fetchData(res.data.key))
                 }
-                dispatch(checkAuthTimeout(res.data.expiresIn))
-                })
+                // dispatch(checkAuthTimeout(res.data.expiresIn))
+            })
                .catch(err =>{
-                   dispatch(errorHandler(err.response.data.error));
-                   dispatch(hideSpinner());
+                //    dispatch(errorHandler(err.response.data.error));
+                //    dispatch(hideSpinner());
+             console.log(err);    
                });
     }
 }
 export const fetchData = (token,userId) =>{
     return dispatch =>{
-        const queryParam = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
-        Axios.get('https://project-aas.firebaseio.com/UserDetails.json'+queryParam)
+       // const queryParam = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
+        Axios.get('https://cors-anywhere.herokuapp.com/https://backend-aas.herokuapp.com/api/rest-auth/user',
+                 {headers:{
+                    Authorization: 'Token '+token
+                 }
+                })
               .then(res =>{
-                const fetchOrders =[];
-                for(let key in res.data){
-                   fetchOrders.push({
-                     ...res.data[key],
-                      id: key
-                   });
-                }
-                  dispatch(addDetail(fetchOrders));
+                  console.log(res);
+                  dispatch(addDetail(res.data));
               })
               .catch(err =>{
                   dispatch(errorHandler(err));
