@@ -51,15 +51,15 @@ class ownerViewSet(viewsets.ModelViewSet):
         
         def calling(h1_add,h1_name,vec_loc):
         
-            account_sid = 'AC0b6be55e2bb2b89e7ef65d0ec1badbfd'
-            auth_token = '9cb800807474c4fcf69ee3ad1de3877f'
+            account_sid = 'AC0b6be55e2bb2b89e7ef65d0ec1badbfe'
+            auth_token = '9cb800807474c4fcf69ee3ad1de3877f2d'
             client = Client(account_sid, auth_token)
             mg = "this... is..   an  ..  accidental    Alert  ... System ..    from    .....   Black  Hats .........."
             msg = "<Response><Say>"+mg+" accident  taken place at  "+str(vec_loc)+" .... aapki car  ka accident   "+str(vec_loc)+"   hua hai  "+"</Say></Response>"
 
             call = client.calls.create(
                                     twiml= msg,
-                                    to='+916265176283',
+                                    to='',
                                     from_='+12057406198'
                                     )
             mosg = mg+" accident  taken place at "+ str(vec_loc) + " the nearest hosspital is "+str(h1_name)+ "  Address  = "+ str(h1_add) + "...." + "https://www.google.com/maps/search/?api=1&query=21.1562462,81.3418322"
@@ -67,7 +67,7 @@ class ownerViewSet(viewsets.ModelViewSet):
                 .create(
                     body=mosg,
                     from_='+12057406198',
-                    to='+916265176283'
+                    to=''
                 )
 
         if y==2 or y==1:
